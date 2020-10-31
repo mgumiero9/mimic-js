@@ -14,7 +14,7 @@ function combos(word) {
 			} else {
 				fixedChars = [...str].splice(charPos, step - 1);
 				[...str].forEach(c => {
-					arr.push(fixedChars, c);
+					arr.push(fixedChars[0], c);
 				});
 				charPos++;
 			}
