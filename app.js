@@ -2,6 +2,8 @@ function combos(word) {
 	let obj = {};
 	let arr = [];
 	let fixedChars = [];
+	let fixedPos = 0;
+	let iterations = 0;
 	let str = [...word];
 	let varChars;
 	let objOrdinary = 0;
@@ -17,15 +19,24 @@ function combos(word) {
 				});
 				step++;
 			} else {
-				fixedChars = str.splice(charPos, step - 1);
+				str = [...word];
+				if (charPos < str.length) {
+					fixedChars = str.splice(fixedPos, step -1);
+				}
+				charPos = 0;
 				str.forEach(c => {
 					arr = [];
 					arr.push(fixedChars[0], c);
 					obj[objOrdinary] = arr;
 					objOrdinary++;
 					charPos++;
+					iterations++
 				});
-				step++;
+				fixedPos++
+				if (iterations >= obj[objOrdinary -1].length * word.length) {
+					step++;
+					fixedPos = 0;
+				}
 			}
 			iterator();
 		}
