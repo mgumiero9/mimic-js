@@ -16,16 +16,17 @@ function combos(word) {
 					obj[objOrdinary] = c;
 					objOrdinary++;
 				});
-				charPos++
+				step++;
 			} else {
 				fixedChars = str.splice(charPos, step - 1);
 				str.forEach(c => {
+					arr = [];
 					arr.push(fixedChars[0], c);
+					obj[objOrdinary] = arr;
+					objOrdinary++;
+					charPos++;
+					step = step >= word.length ? 1 : ++step;
 				});
-				obj[objOrdinary] = arr;
-				objOrdinary++;
-				charPos++;
-				step++;
 			}
 			iterator();
 		}
