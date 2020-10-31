@@ -20,13 +20,13 @@ function combos(word) {
 				step++;
 			} else {
 				str = [...word];
-				if (charPos < str.length) {
+				if (fixedPos < str.length) {
 					fixedChars = str.splice(fixedPos, step -1);
 				}
 				charPos = 0;
 				str.forEach(c => {
 					arr = [];
-					arr.push(fixedChars[0], c);
+					arr.push(fixedChars.join(''), c);
 					obj[objOrdinary] = arr;
 					objOrdinary++;
 					charPos++;
