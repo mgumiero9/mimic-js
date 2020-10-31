@@ -9,9 +9,8 @@ function combos(word) {
 	let charPos = 0;
 	(function iterator() {
 		arr = [];
-		if (step <= word.length && charPos < str.length) {
+		if (step <= word.length) {
 			if (step === 1) {
-				// str.forEach(c => arr.push(c));
 				str.forEach(c => {
 					obj[objOrdinary] = c;
 					objOrdinary++;
@@ -25,8 +24,8 @@ function combos(word) {
 					obj[objOrdinary] = arr;
 					objOrdinary++;
 					charPos++;
-					step = step >= word.length ? 1 : ++step;
 				});
+				step++;
 			}
 			iterator();
 		}
