@@ -5,7 +5,6 @@ function combos(word) {
 	let fixedPos = 0;
 	let iterations = 0;
 	let str = [...word];
-	let varChars;
 	let objOrdinary = 0;
 	let step = 1;
 	let charPos = 0;
@@ -38,24 +37,20 @@ function combos(word) {
 					fixedPos = 0;
 				}
 			} else {
-				let lastObj = {};
 				let lastObjKey = Object.keys(obj).length -1;
 				Object.keys(obj).forEach(key => {
 					if (obj[key].length === obj[lastObjKey].length) {
-						lastObj[key] = obj[key];
+						str = [...word];
+						obj[key].forEach(c => {
+							str = str.filter(value => value !== c);
+						});
+
+						arr = [];
+						arr.push(obj[key].join(''), str);
+						obj[objOrdinary] = arr;
+						objOrdinary++;
 					}
 				});
-				Object.keys(lastObj).forEach(key => {
-					str = [...word];
-					lastObj[key].forEach(c => {
-						str = str.filter(value => value !== c);
-					});
-
-					arr = [];
-					arr.push(lastObj[key].join(''), str);
-					obj[objOrdinary] = arr;
-					objOrdinary++;
-				})
 
 				step++;
 			}
