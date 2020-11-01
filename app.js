@@ -47,11 +47,12 @@ function combos(word) {
 						obj[key].forEach(c => {
 							str = str.filter(value => value !== c);
 						});
-
-						arr = [];
-						arr.push(...obj[key], ...str);
-						obj[objOrdinary] = arr;
-						objOrdinary++;
+						[...str].forEach(strChar => {
+							arr = [];
+							arr.push(...obj[key], strChar);
+							obj[objOrdinary] = arr;
+							objOrdinary++;
+						})
 					}
 				});
 
