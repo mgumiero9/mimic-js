@@ -55,7 +55,6 @@ function combos(word) {
 						})
 					}
 				});
-
 				step++;
 			}
 			iterator();
@@ -70,5 +69,6 @@ function combos(word) {
 	});
 }
 // combos('abc')
-combos('abcd')
-// combos('abcde')
+// combos('abcd')
+combos('abcde')
+// combos('abcdef')
