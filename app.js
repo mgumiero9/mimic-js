@@ -18,7 +18,7 @@ function combos(word) {
 					objOrdinary++;
 				});
 				step++;
-			} else {
+			} else if (step === 2) {
 				str = [...word];
 				if (fixedPos < str.length) {
 					fixedChars = str.splice(fixedPos, step -1);
@@ -37,6 +37,18 @@ function combos(word) {
 					step++;
 					fixedPos = 0;
 				}
+			} else {
+				let lastObj = {};
+				Object.keys(obj).forEach(key => {
+					let lastObjKeyLength = Object.keys(obj).length -1;
+					if (obj[key].length === obj[lastObjKeyLength].length) {
+						lastObj[key] = obj[key];
+					}
+				});
+
+				
+
+				step++;
 			}
 			iterator();
 		}
