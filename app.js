@@ -7,7 +7,6 @@ function combos(word) {
 	let str = [...word];
 	let objOrdinary = 0;
 	let step = 1;
-	let charPos = 0;
 
 	function addRow(c) {
 		obj[objOrdinary] = c;
@@ -28,12 +27,10 @@ function combos(word) {
 				if (fixedPos < str.length) {
 					fixedChars = str.splice(fixedPos, step -1);
 				}
-				charPos = 0;
 				str.forEach(c => {
 					arr = [];
 					arr.push(fixedChars.join(''), c);
 					addRow(arr);
-					charPos++;
 				});
 				fixedPos++
 				if (stepCounter >= word.length) {
