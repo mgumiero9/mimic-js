@@ -3,7 +3,6 @@ function combos(word) {
 	let arr = [];
 	let fixedChars = [];
 	let fixedPos = 0;
-	let iterations = 0;
 	let stepCounter = 0;
 	let str = [...word];
 	let objOrdinary = 0;
@@ -35,7 +34,6 @@ function combos(word) {
 					arr.push(fixedChars.join(''), c);
 					addRow(arr);
 					charPos++;
-					iterations++
 				});
 				fixedPos++
 				if (stepCounter >= word.length) {
