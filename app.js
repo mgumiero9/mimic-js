@@ -45,8 +45,17 @@ function combos(word) {
 						lastObj[key] = obj[key];
 					}
 				});
+				Object.keys(lastObj).forEach(key => {
+					str = [...word];
+					lastObj[key].forEach(c => {
+						str = str.filter(value => value !== c);
+					});
 
-				
+					arr = [];
+					arr.push(lastObj[key].join(''), str);
+					obj[objOrdinary] = arr;
+					objOrdinary++;
+				})
 
 				step++;
 			}
