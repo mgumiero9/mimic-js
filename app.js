@@ -40,8 +40,6 @@ function combos(word) {
 				fixedPos++
 				if (stepCounter >= word.length) {
 					step++;
-					fixedPos = 0;
-					stepCounter = 0;
 				}
 			} else {
 				let lastObjKey = Object.keys(obj).length -1;
