@@ -32,7 +32,7 @@ function combos(word) {
 					arr.push(fixedChars.join(''), c);
 					addRow(arr);
 				});
-				fixedPos++
+				fixedPos++;
 				if (stepCounter >= word.length) {
 					step++;
 				}
@@ -67,7 +67,7 @@ function combos(word) {
 		});
 	})();
 }
-// combos('abc')
-// combos('abcd')
-combos('abcde')
-// combos('abcdef')
+// combos('abc');
+// combos('abcd');
+combos('abcde');
+// combos('abcdef');
