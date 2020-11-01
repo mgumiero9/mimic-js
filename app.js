@@ -39,9 +39,9 @@ function combos(word) {
 				}
 			} else {
 				let lastObj = {};
+				let lastObjKey = Object.keys(obj).length -1;
 				Object.keys(obj).forEach(key => {
-					let lastObjKeyLength = Object.keys(obj).length -1;
-					if (obj[key].length === obj[lastObjKeyLength].length) {
+					if (obj[key].length === obj[lastObjKey].length) {
 						lastObj[key] = obj[key];
 					}
 				});
