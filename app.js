@@ -4,6 +4,7 @@ function combos(word) {
 	let fixedChars = [];
 	let fixedPos = 0;
 	let iterations = 0;
+	let stepCounter = 0;
 	let str = [...word];
 	let objOrdinary = 0;
 	let step = 1;
@@ -18,6 +19,7 @@ function combos(word) {
 				});
 				step++;
 			} else if (step === 2) {
+				stepCounter++;
 				str = [...word];
 				if (fixedPos < str.length) {
 					fixedChars = str.splice(fixedPos, step -1);
@@ -32,9 +34,10 @@ function combos(word) {
 					iterations++
 				});
 				fixedPos++
-				if (iterations >= obj[objOrdinary -1].length * word.length) {
+				if (stepCounter >= word.length) {
 					step++;
 					fixedPos = 0;
+					stepCounter = 0;
 				}
 			} else {
 				let lastObjKey = Object.keys(obj).length -1;
@@ -65,6 +68,6 @@ function combos(word) {
 		}
 	});
 }
-combos('abc')
-// combos('abcd')
+// combos('abc')
+combos('abcd')
 // combos('abcde')
