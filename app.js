@@ -46,7 +46,7 @@ function combos(word) {
 						});
 
 						arr = [];
-						arr.push(obj[key].join(''), str);
+						arr.push(...obj[key], ...str);
 						obj[objOrdinary] = arr;
 						objOrdinary++;
 					}
